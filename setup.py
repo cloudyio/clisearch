@@ -23,7 +23,7 @@ class PostInstallCommand(install):
         print(f"Created config.json with default bang 'g' at {config_path}")
 
 setup(
-    name='searchcli',
+    name='clisearch',
     version='0.1',
     packages=find_packages(),
     install_requires=[
