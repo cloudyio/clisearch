@@ -6,7 +6,7 @@
 ## What are duck duck go bangs?
 - Bangs are a feature in the duck duck go browser that let you add shortcuts to your search query to open the website you actually want to search on faster, for example:
 
-Adding !gh to your search query would take you to https://github.com/search?q=(your query here)&type=repositories removing all the extra time it would take to use your search engine
+Adding !gh to your search query would take you to https://github.com/search?q=(your-query-here)&type=repositories removing all the extra time it would take to use your search engine
 
 ## How to use
 - To search run `search [query]`, by default this will take you to googles search engine
