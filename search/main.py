@@ -3,6 +3,7 @@ import webbrowser
 import json 
 import re
 import os
+import datetime
 
 
 path = os.path.join(os.path.expanduser("~"), ".searchcli/bang.json")
@@ -10,6 +11,12 @@ bangs = json.loads(open(path).read())
 
 config_path = os.path.join(os.path.expanduser("~"), ".searchcli/config.json")
 config = json.loads(open(config_path).read())
+
+history_path = os.path.join(os.path.expanduser("~"), ".searchcli/history.json")
+if not os.path.exists(history_path):
+    with open(history_path, "w") as file:
+        json.dump([], file)
+history = json.loads(open(history_path).read())
 
 @click.command()
 @click.option('--default', help='default bang, if not sure set to g')
@@ -57,6 +64,10 @@ def search(default, query):
 
     link = link.replace("{{{s}}}", query)
 
+    history.append({"date": datetime.datetime.now().isoformat(), "link": link})
+    with open(history_path, "w") as file:
+        json.dump(history, file, indent=4)
+        file.close()
 
     webbrowser.open(link, new=2)
 
