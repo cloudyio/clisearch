@@ -13,6 +13,7 @@ Adding !gh to your search query would take you to https://github.com/search?q=(y
 - To use bangs, first learn a couple from https://duckduckgo.com/bangs, some useful ones are shown at the bottom of this readme, bangs can then be added on by using !(bang choice)
 - Bang example: `search !yt [query]`, this takes you to youtube.com and searches for a video with your query
 - To change your default bang use `search --default "yt"` where `yt` is the bang of your choice
+- History can be viewed in your home user folder inside of `.clisearch/history.json`
 
 ## How to install
 ### Option 1, pip
