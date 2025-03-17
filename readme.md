@@ -23,8 +23,9 @@ Adding !gh to your search query would take you to https://github.com/search?q=(y
 - The package can also be compiled in case you want anything edited or want to contribute to the repository
 1. Clone the repository with `git clone https://github.com/cloudyio/clisearch`
 2. Navigate to new folder
-3. Run `pip install .` in your command line
-4. Package is now compiled!
+3. Run `pip install -r requirements.txt` to install the `click` package
+4. Run `pip install .` in your command line
+5. Package is now compiled!
 
 ## Some useful Bangs:
 - gh: github.com
