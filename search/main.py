@@ -7,7 +7,7 @@ import datetime
 import urllib
 
 path = os.path.join(os.path.expanduser("~"), ".searchcli/bang.json")
-if not os.pack.exists(path):
+if not os.path.exists(path):
     url = "https://raw.githubusercontent.com/cloudyio/clisearch/refs/heads/main/search/config/bang.json"
     bang_path = os.path.join(os.path.expanduser("~"), ".searchcli/bang.json")
     os.makedirs(os.path.dirname(bang_path), exist_ok=True)
