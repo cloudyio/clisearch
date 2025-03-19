@@ -4,9 +4,19 @@ import json
 import re
 import os
 import datetime
-
+import urllib
 
 path = os.path.join(os.path.expanduser("~"), ".searchcli/bang.json")
+if not os.pack.exists(path):
+    url = "https://raw.githubusercontent.com/cloudyio/clisearch/refs/heads/main/search/config/bang.json"
+    bang_path = os.path.join(os.path.expanduser("~"), ".searchcli/bang.json")
+    os.makedirs(os.path.dirname(bang_path), exist_ok=True)
+    urllib.request.urlretrieve(url, bang_path)
+
+    config_path = os.path.join(os.path.expanduser("~"), ".searchcli/config.json")
+    config_data = {"default": "g"}
+    with open(config_path, "w") as config_file:
+        json.dump(config_data, config_file, indent=4)
 bangs = json.loads(open(path).read())
 
 config_path = os.path.join(os.path.expanduser("~"), ".searchcli/config.json")
@@ -17,6 +27,8 @@ if not os.path.exists(history_path):
     with open(history_path, "w") as file:
         json.dump([], file)
 history = json.loads(open(history_path).read())
+
+
 
 @click.command()
 @click.option('--default', help='default bang, if not sure set to g')
